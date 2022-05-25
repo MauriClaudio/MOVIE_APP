@@ -8,15 +8,12 @@
 </head>
 <body>
     <script type="module">
-        import {URL} from "./js/modulo-api.js";
+        import {listNightmare} from "./js/modulo-api.js";
 
-        console.log(URL);
-        windows.URL2=URL;
+        console.log("Inizio esecuzione");
+        listNightmare();
+        console.log("Fine...");
 
     </script>
-    <button onclick="console.log(URL2)">
-        Submit
-    </button>
-
 </body>
 </html>
