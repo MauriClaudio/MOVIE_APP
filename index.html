@@ -8,10 +8,12 @@
 </head>
 <body>
     <script type="module">
-        import {listNightmareSeries} from "./js/modulo-api.js";
+        import {apilist} from "./js/modulo-api.js";
+        import {CONTENT_TYPE} from "./js/config.js";
 
         console.log("Inizio esecuzione");
-        listNightmareSeries();
+        apilist("nightmare", "");
+        apilist("nightmate", CONTENT.TYPE.SERIES);
         console.log("Fine...");
 
     </script>

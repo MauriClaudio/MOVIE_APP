@@ -1,22 +1,15 @@
-const URL_LIST_NIGHTMARE = 
-    "http://www.omdbapi.com/?apikey=96fcfbd7&s=nightmare";
-const URL_LIST_NIGHTMARE_SERIES = 
-    "http://www.omdbapi.com/?apikey=96fcfbd7&s=nightmare&&type=series";
+import {BASE_URL} from "./config.js";
 
-export const listNightmare = () => {
-    fetch(URL_LIST_NIGHTMARE)
+/**
+ * Chiamate api per elenchi di film, serie, etc
+ * @param {*} url la URL da chiamre con la fetch
+ */
+export const apilist = (s, type) => {
+    const url = BASE_URL +  `s=${s}&type=${type}`;
+    fetch(url)
         .then((response) => response.json())
         .then((results) => {
-            const movies = results.Search;
-            console.log(movies);
-        });
-};
-
-export const listNightmareSeries = () => {
-    fetch(URL_LIST_NIGHTMARE_SERIES)
-        .then((response) => response.json())
-        .then((results) => {
-            const movies = results.Search;
-            console.log(movies);
-        });
+            const items = results.Search;
+            console.log(items);
+    });
 };
