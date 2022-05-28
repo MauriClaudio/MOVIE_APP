@@ -10,6 +10,16 @@ export const apilist = (s, type) => {
         .then((response) => response.json())
         .then((results) => {
             const items = results.Search;
-            console.log(items);
+            viewItems(items);
     });
 };
+
+const viewItems = (item) => {
+    item.map((item) => {
+        console.group(item.Title);
+        console.log(item.Year);
+        console.log(item.Type);
+        console.log(item.Poster);
+        console.groupEnd();
+    });
+}
