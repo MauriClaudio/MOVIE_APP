@@ -19,10 +19,12 @@
         
         <div id="nav">
 		    <a href="#">Home</a>
-            <a href="#mes-full">Generi</a>
-		    <a href="#?">Cerca</a>
+            <a href="#mes-full">Primo Piano</a>
+		    <a href="#mes">Cerca</a>
         </div>
         
+        <div id="mes-full"> <p>titoli in primo piano</p> </div>
+
         <div class="item-evi">
             <img src="img/matrix.jfif" width="290" height="480">
     	    <h2>Matrix</h2>
@@ -48,18 +50,17 @@
             <h2>una notte da leoni 3</h2>
         </div>
 
-        <div id="mes-full"> <p>cerca per genere</p> </div>
+        <div id="mes"> <p>cerca per titolo</p> </div>
 
-        <div id="sidebar">
-    	    <h2>Generi</h2>
-		    <ul>
-                <li>Horror</li>
-                <li>Azione</li>
-                <li>Avventura</li>
-                <li>Poliziesco</li>
-                <li>...</li>
-            </ul>
-	    </div>
+            <script type="module">
+                import {apilist} from "./js/modulo-api.js";
+                import {CONTENT_TYPE} from "./js/config.js";
+                apilist("Terminator", CONTENT_TYPE.SERIES);
+            </script>
+
+        <div style="padding: 20px;">
+            <h2 id="movies"></h2>
+        </div>
 
 	<div class="clear"></div>
 

@@ -29,7 +29,11 @@ a:hover{color:#333;text-decoration:underline;}
 		
 		/*** Messaggio ***/
 		#mes-full		{width:920;padding:20px;clear:both;background: #e2e2e0;}	
-			#mes-full p {font-family:oswald;text-transform:uppercase;font-weight:normal;font-size: 28px; font-style:oblique}				
+			#mes-full p {font-family:oswald;text-transform:uppercase;font-weight:normal;font-size: 28px; font-style:oblique}
+		
+			/*** Messaggio ***/
+		#mes		{width:920;padding:20px;clear:both;background: #e2e2e0;}	
+		#mes p {font-family:oswald;text-transform:uppercase;font-weight:normal;font-size: 28px; font-style:oblique}				
 		
 		/*** Contenuto ***/
 		#content		{width:620px;padding:20px;float:left;background: #F0F0F0 }
