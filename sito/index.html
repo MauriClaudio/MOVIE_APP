@@ -26,45 +26,79 @@
         <div id="mes-full"> <p>titoli in primo piano</p> </div>
 
         <div class="item-evi">
-            <img src="img/matrix.jfif" width="290" height="480">
+            <img src="img/matrix.jfif">
     	    <h2>Matrix</h2>
         </div>
         <div class="item-evi">
-            <img src="img/PoC.jfif"  width="290" height="480">
+            <img src="img/PoC.jfif">
             <h2>Pirati dei Caraibi</h2>
+        </div>
+        <div class="item-evi">
+    	    <img src="https://m.media-amazon.com/images/M/MV5BNzhlYjE5MjMtZDJmYy00MGZmLTgwN2MtZGM0NTk2ZTczNmU5XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg" width="290" height="480">
+            <h2>terminator destino oscuro</h2>
+        </div>
+        <!----
+        <div class="item-evi">
+    	    <img src="img/divergent.jpg"  width="290" height="480">
+            <h2>divergent</h2>
         </div>
         <div class="item-evi">
     	    <img src="img/tbi.jfif"  width="290" height="480">
             <h2>The Bourne Identity</h2>
         </div>
         <div class="item-evi">
-    	    <img src="img/divergent.jpg"  width="290" height="480">
-            <h2>divergent</h2>
-        </div>
-        <div class="item-evi">
-    	    <img src="img/tdo.jpg"  width="290" height="480">
-            <h2>terminator destino oscuro</h2>
-        </div>
-        <div class="item-evi">
     	    <img src="img/unanottedaleoni3.jpg"  width="290" height="480">
             <h2>una notte da leoni 3</h2>
         </div>
-
-        <div id="mes"> <p>cerca per titolo</p> </div>
-
-            <script type="module">
-                import {apilist} from "./js/modulo-api.js";
-                import {CONTENT_TYPE} from "./js/config.js";
-                apilist("Terminator", CONTENT_TYPE.SERIES);
-            </script>
-
-        <div style="padding: 20px;">
-            <h2 id="movies"></h2>
+        <!---->
+        <div id="mes"> 
+            <p>cerca per titolo e genere</p>
+            <input type="text" id="titolo" value="Cerca">
+            <select id="tipo">
+                <option value="movie">Movie</option>
+                <option value="series">Series</option>
+                <option value="episodes">Episodes</option>
+                <option value="game">Game</option>
+            </select>
+            <button onclick="Search()">Search</button>
         </div>
 
-	<div class="clear"></div>
+        <h2 id="movies"></h2>
+        
+        <script>
+            function Search(){
+                document.getElementById("movies").innerHTML="";
+                const url="http://www.omdbapi.com/?apikey=96fcfbd7&s="+document.getElementById("titolo").value+
+                          "&type="+document.getElementById("tipo").value;
+                fetch(url)
+                    .then((response) => response.json())
+                    .then((results) => {
+                        const items = results.Search;
+                        viewItems(items);
+                });
+            };
+            const viewItems = (item) => {
+                const element = document.getElementById("movies");
+                item.map((item) => {
+                
+                element.appendChild(createHTMLMovie(item));
+                });
+            };
+            const createHTMLMovie = (movie) => {
+                const para = document.createElement("p");
+                para.style="width:280px;padding:18px;float:left;";
+                const img = document.createElement("img");
+                img.src=movie.Poster;
+                const node = document.createTextNode(movie.Title);
+                para.appendChild(img);
+                para.appendChild(node);
+                return para;
+            }
+        </script>
+        
+	    <div class="clear"></div>
 
-	<footer id="footer"><p></p></footer>
+	    <footer id="footer"><p></p></footer>
 
     </div>
 </body>
