@@ -14,6 +14,21 @@ export const apilist = (s, type) => {
     });
 };
 
+export const asApiList = async (s, type) => {
+    const url = BASE_URL +  `s=${s}&type=${type}`;
+
+    try{
+        const response = await fetch(url)
+        const results = await response.json();        
+        const items = results.Search;
+        viewItems(items);
+    } catch (error) {
+        console.log(error.message);
+    } finally {
+        console.log("finally");
+    }
+}
+
 const viewItems = (item) => {
     const element = document.getElementById("movies");
     item.map((item) => {

@@ -1,20 +1,26 @@
-
-body{background-size:100% 100%;background-repeat: no-repeat;font-family: 'Source Sans Pro', sans-serif;}
-h1,h2{font-family:oswald;text-transform:uppercase;font-weight:normal;}
+body{	background-size:100%;
+		background-repeat: no-repeat;
+		padding-bottom: 3%;
+		background-attachment: fixed;
+		/**font-family: 'Source Sans Pro', sans-serif;/**/
+	}
+/*h1,h2{font-family:oswald;/*text-transform:uppercase;font-weight:normal;}*/
 a{color:#21aabd;text-decoration:none;}
 a:hover{color:#333;text-decoration:underline;}
-img{width: 290px;height: 480px;}
+img{border-radius: 5px;}
 
-	#container		{width: 960px;margin: 0 auto;background:#fff; border:black solid;}
-		
 		/*** Header ***/
+		#header{	background:#000000;
+					text-align: center; 
+					font-family: Brush Script MT, Brush Script Std, cursive; 
+					font-size: 70px;
+					color: #c32525;
+					/*font-family:oswald;/*text-transform:uppercase;font-weight:normal;*/
+				}
 		
-		#header			{width:940px;padding:10px;background:#5F30B2;}
-			#header h1	{color:#fff;text-align: center; font-family: Brush Script MT, Brush Script Std, cursive; font-size: 50px;}
-			
 	
 		/*** Nav ***/	
-		#nav			{background:#5C408E;color:#fff;padding-left:350px}
+		#nav			{background:#000000;color:#fff;text-align: center;position: -webkit-sticky; position: sticky; top: 0;}
 			#nav a		{color:#fff; display:inline-block; padding:15px 20px; text-decoration:none; text-transform:uppercase;font-family:oswald;}
 			#nav a:hover{background:#333;}
 		
@@ -32,7 +38,7 @@ img{width: 290px;height: 480px;}
 			#mes-full p {font-family:oswald;text-transform:uppercase;font-weight:normal;font-size: 28px; font-style:oblique}
 		
 			/*** Messaggio ***/
-		#mes		{width:920;padding:20px;clear:both;background: #e2e2e0;}	
+		#mes		{width:920;padding:20px;clear:both;background: rgba(0, 0, 0, 0.7); color: white;}	
 		#mes p {font-family:oswald;text-transform:uppercase;font-weight:normal;font-size: 28px; font-style:oblique}				
 		
 		/*** Contenuto ***/
@@ -46,8 +52,9 @@ img{width: 290px;height: 480px;}
 		#sidebar		{width:260px;padding:20px;float:left;}
 	
 		/*** Footer ***/
-		#footer			{width:920px;padding:20px;clear:both;background: #5C408E;color:#fff; font-family: Brush Script MT, Brush Script Std, cursive; }
+		#footer			{padding:20px;clear:both;background: #000000;color:#fff; font-family: Brush Script MT, Brush Script Std, cursive; }
 		
+		#space {width:100%;clear:both;height:1px;padding-bottom: 20%;background: rgba(0, 0, 0, 0);}
 		
 /* Clear */
-.clear{width:100%;clear:both;height:1px;background:#eee;}
+.clear{width:100%;clear:both;height:4px;background:gray;}

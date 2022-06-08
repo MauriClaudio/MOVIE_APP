@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//IT" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-    <title>Movie APP</title>
+    <title>One Movie APP</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -15,55 +15,27 @@
 <body background="img/banner2.jpg">
     <div id="container">
 
-	    <div id="header">   <h1>Movie app</h1>  </div>
-        
-        <div id="nav">
-		    <a href="#">Home</a>
-            <a href="#mes-full">Primo Piano</a>
-		    <a href="#mes">Cerca</a>
-        </div>
-        
-        <div id="mes-full"> <p>titoli in primo piano</p> </div>
+	    <div id="header">One Movie app</div>
+        <div class="clear"></div>
 
-        <div class="item-evi">
-            <img src="img/matrix.jfif">
-    	    <h2>Matrix</h2>
-        </div>
-        <div class="item-evi">
-            <img src="img/PoC.jfif">
-            <h2>Pirati dei Caraibi</h2>
-        </div>
-        <div class="item-evi">
-    	    <img src="https://m.media-amazon.com/images/M/MV5BNzhlYjE5MjMtZDJmYy00MGZmLTgwN2MtZGM0NTk2ZTczNmU5XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg" width="290" height="480">
-            <h2>terminator destino oscuro</h2>
-        </div>
-        <!----
-        <div class="item-evi">
-    	    <img src="img/divergent.jpg"  width="290" height="480">
-            <h2>divergent</h2>
-        </div>
-        <div class="item-evi">
-    	    <img src="img/tbi.jfif"  width="290" height="480">
-            <h2>The Bourne Identity</h2>
-        </div>
-        <div class="item-evi">
-    	    <img src="img/unanottedaleoni3.jpg"  width="290" height="480">
-            <h2>una notte da leoni 3</h2>
-        </div>
-        <!---->
         <div id="mes"> 
             <p>cerca per titolo e genere</p>
-            <input type="text" id="titolo" value="Cerca">
+            <input type="text" id="titolo" value="One Piece">
             <select id="tipo">
                 <option value="movie">Movie</option>
                 <option value="series">Series</option>
                 <option value="episodes">Episodes</option>
-                <option value="game">Game</option>
             </select>
             <button onclick="Search()">Search</button>
         </div>
 
-        <h2 id="movies"></h2>
+        
+        
+        <div id="nav">
+		    <a href="./index.html">Annulla Ricerca</a>
+        </div>
+
+        <div id="movies"></div>
         
         <script>
             function Search(){
@@ -80,13 +52,12 @@
             const viewItems = (item) => {
                 const element = document.getElementById("movies");
                 item.map((item) => {
-                
                 element.appendChild(createHTMLMovie(item));
                 });
             };
             const createHTMLMovie = (movie) => {
-                const para = document.createElement("p");
-                para.style="width:280px;padding:18px;float:left;";
+                const para = document.createElement("a");
+                para.style="margin: 10px;border-radius: 10px 10px 10px 10px;width:280px;padding: 50px;display:inline-block;text-transform:uppercase; color: white;background:rgba(0, 0, 0, 0.5); ";
                 const img = document.createElement("img");
                 img.src=movie.Poster;
                 const node = document.createTextNode(movie.Title);
@@ -95,7 +66,7 @@
                 return para;
             }
         </script>
-        
+
 	    <div class="clear"></div>
 
 	    <footer id="footer"><p></p></footer>
