@@ -1,6 +1,6 @@
 
 
-export function Search(){
+export const Search = () => {
     document.getElementById("movies").innerHTML="";
     const url="http://www.omdbapi.com/?apikey=96fcfbd7&s="+document.getElementById("titolo").value+
               "&type="+document.getElementById("tipo").value;
