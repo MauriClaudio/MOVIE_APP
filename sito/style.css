@@ -1,4 +1,5 @@
-body{	background-size:100%;
+body{	background-size: auto;
+
 		background-repeat: no-repeat;
 		padding-bottom: 3%;
 		background-attachment: fixed;
