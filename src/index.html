@@ -26,10 +26,8 @@
                 <option value="series">Series</option>
                 <option value="episodes">Episodes</option>
             </select>
-            <button onclick="funSearch()">Search</button>
+            <button id="on" style="background: rgba(0, 0, 0, 0);"></button>
         </div>
-
-        
         
         <div id="nav">
 		    <a href="./index.html">Annulla Ricerca</a>
@@ -37,11 +35,17 @@
 
         <div id="movies"></div>
         
-        <script>
+        <script type="module">
             import {Search} from "./js/Search.js";
-            function funSearch (){
+            const funSearch = () => {
                 Search();
             }
+            const element = document.getElementById("on");
+            const node = document.createElement("button");
+            node.onclick=funSearch;
+            const textnode = document.createTextNode("Search");
+            node.appendChild(textnode);
+            element.appendChild(node);
         </script>
 
 	    <div class="clear"></div>
