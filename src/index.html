@@ -20,7 +20,7 @@
 
         <div id="mes"> 
             <p>cerca per titolo e genere</p>
-            <input type="text" id="titolo" value="One Piece">
+            <input type="text" id="titolo" value="cacca">
             <select id="tipo">
                 <option value="movie">Movie</option>
                 <option value="series">Series</option>
@@ -36,9 +36,12 @@
         <div id="movies"></div>
         
         <script type="module">
-            import {Search} from "./js/Search.js";
+            import {apilist} from "./js/modulo-api.js";
+            import {CONTENT_TYPE} from "./js/config.js";
+            
             const funSearch = () => {
-                Search();
+                document.getElementById("movies").innerHTML="";
+                apilist(document.getElementById("titolo").value, document.getElementById("tipo").value);
             }
             const element = document.getElementById("on");
             const node = document.createElement("button");

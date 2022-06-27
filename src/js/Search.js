@@ -17,7 +17,8 @@ const viewItems = (item) => {
 };
 const createHTMLMovie = (movie) => {
     const node = document.createElement("a");
-    //node.onclick = pagina(movie.title);
+    //node.href = "https://www.google.com";
+    node.onclick = si(movie.Title);
     node.style = "margin: 10px;border-radius: 10px 10px 10px 10px;width:280px;padding: 50px;display:inline-block;text-transform:uppercase; color: white;background:rgba(0, 0, 0, 0.5); ";
     const img = document.createElement("img");
     img.src = movie.Poster;
@@ -25,6 +26,11 @@ const createHTMLMovie = (movie) => {
     node.appendChild(img);
     node.appendChild(textnode);
     return node;
+};
+
+const si = (t) => {
+    window.location.assign("https://www.google.com");
+    //alert(t);
 };
 /*
 prove per creare una pagina in base al film cliccato
