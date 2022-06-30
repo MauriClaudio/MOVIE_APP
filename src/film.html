@@ -1,7 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//IT" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-<body>
-    <script>
-        
-    </script>
+<head>
+    <title>One Movie APP</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+</head>
+<body background="img/banner2.jpg">
+    <div id="container">
+    
+        <div id="header">One Movie app</div>
+        <div class="clear"></div>
+    </div>   
+    <div style="margin: 10px;border-radius: 10px 10px 10px 10px;padding: 50px;display:inline-block;text-transform:uppercase; color: white;background:rgba(3, 8, 5, 0.8); ">
+        <div style = "float:left">
+            <img id="poster" style = "float:left;width:350px;" />
+        </div>
+        <div style = "float:right; width:700px; font-size: 40px; padding: 20px; padding-left: 40px;">
+            <div id="content" style="position:relative;color: white;background:rgba(3, 8, 5, 0.8); "></div>
+            <a href="./index.html"><center><button style="margin:30px;padding:0% 5% 0% 5%"><h1>HOME</h1></button></center></a>
+        </div>
+    </div>
+        <script>
+            var queryString = window.location.search;
+            var urlParams = new URLSearchParams(queryString);
+
+            const poster = document.getElementById("poster");
+            poster.src =urlParams.get('poster');
+            const content = document.getElementById("content");
+            
+            content.appendChild(document.createTextNode("Titolo : " + urlParams.get('title')));
+            content.appendChild(document.createElement("br"));
+            content.appendChild(document.createTextNode("Anno : " + urlParams.get('year')));
+            content.appendChild(document.createElement("br"));
+            content.appendChild(document.createTextNode("Tipo : " + urlParams.get('type')));
+
+        </script>
 </body>
 </html>

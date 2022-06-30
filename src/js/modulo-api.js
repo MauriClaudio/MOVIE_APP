@@ -37,12 +37,13 @@ const viewItems = (item) => {
 };
 
 const createHTMLMovie = (movie) => {
-    const para = document.createElement("p");
+    const para = document.createElement("a");
     const node = document.createTextNode(movie.Title);
     para.style = "margin: 10px;border-radius: 10px 10px 10px 10px;width:280px;padding: 50px;display:inline-block;text-transform:uppercase; color: white;background:rgba(0, 0, 0, 0.5); ";
     const img = document.createElement("img");
     img.src = movie.Poster;
     para.appendChild(img);
     para.appendChild(node);
+    para.href = "./film.html?title=" + movie.Title + "&year=" + movie.Year + "&type=" + movie.Type + "&poster=" + movie.Poster;
     return para;
 }
